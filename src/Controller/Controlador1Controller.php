@@ -74,12 +74,6 @@ class Controlador1Controller extends AbstractController
 		$kubernetes = str_replace('<br>', '<tr><td>', $kubernetes);
 
 
-
-
-
-
-
-
        return $this->render('controlador1/index.html.twig', [
             'controller_name' => 'Controlador1Controller',
 			'info_app' => $kubernetes ,
