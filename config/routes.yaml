@@ -5,8 +5,26 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
-    
-index:
+
+indice:
     path: /
-    controller: ../src/Controller/IndexController
+    controller: App\Controller\IndexController::index
+pod:
+    path: /pod
+    controller: App\Controller\Controlador1Controller::index
+service:
+    path: /service
+    controller: App\Controller\Controlador2Controller::index
+deploymente:
+    path: /deployment
+    controller: App\Controller\Controlador3Controller::index
+replicaset:
+    path: /replicaset
+    controller: App\Controller\Controlador4Controller::index
+nginx:
+    path: /nginx
+    controller: App\Controller\Controlador5Controller::index
+
+    
+
     

@@ -2,44 +2,25 @@
 
 {% block title %}Kubectl4Everyone{% endblock %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+	.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-
 	/* CSS */
-	.button-1 {
+	#boton{
 	background-color: #EA4C89;
-	border-radius: 8px;
-	border-style: none;
-	box-sizing: border-box;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-weight: 500;
-	height: 40px;
-	line-height: 20px;
-	list-style: none;
-	margin: 0;
-	outline: none;
-	padding: 10px 16px;
-	position: relative;
-	text-align: center;
-	text-decoration: none;
-	transition: color 100ms;
-	vertical-align: baseline;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	}
-
-	.button-1:hover,
-	.button-1:focus {
-	background-color: #F082AC;
 	}
 	@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+	body {
+	background: #272727;
+	font-family: "Montserrat", sans-serif;
+	}
+
 	* {
 	margin: 0;
 	padding: 0;
@@ -47,10 +28,6 @@
 	box-sizing: border-box;
 	}
 
-	body {
-	background: #272727;
-	font-family: "Montserrat", sans-serif;
-	}
 
 	.navMenu {
 	position: absolute;
@@ -126,27 +103,24 @@
 	transition: all 0.2s ease-in-out;
 	opacity: 1;
 	}
-	.flex{
-		display: flex;
-	}
+
 </style>
-
 <div class="example-wrapper">
-	<div class="flex">
-		<h1>Kubectl4Everyone</h1>
-		<button class="button-1" role="button">Cerrar session</button>
+	<div class="d-flex">
+		<h1 class="text-light">Kubectl4Everyone</h1>
+		<button id="boton" class="btn" role="button">Cerrar session</button>
 	</div>
-</div>
+	<div>
+		<nav class="navMenu">
+			<a href="/pod">Pod</a>
+			<a href="/service">Service</a>
+			<a href="/deployment">Deployment</a>
+			<a href="/replicaset">Replicaset</a>
+			<a href="/nginx">Nginx</a>
+      		<div class="dot"></div>
+    	</nav>
 
-<div >
-    <nav class="navMenu">
-      	<a href="/controlador1">pod</a>
-		<a href="/controlador2">service</a>
-		<a href="/controlador3">deployment</a>
-		<a href="/controlador4">replicaset</a>
-		<a href="/controlador5">Nginx</a>
-      	<div class="dot"></div>
-    </nav>
+	</div>	
 </div>
 
 	
