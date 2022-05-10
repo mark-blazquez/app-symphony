@@ -24,6 +24,12 @@ replicaset:
 nginx:
     path: /nginx
     controller: App\Controller\Controlador5Controller::index
+reinicio:
+    path: /reiniciar
+    controller: App\Controller\ReiniciarController::index
+parar:
+    path: /parar
+    controller: App\Controller\PararController::index
 
     
 

@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,12 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
-class Controlador5Controller extends AbstractController
+class ReiniciarController extends AbstractController
 {
-    #[Route('/controlador5', name: 'app_controlador5')]
+    #[Route('/reiniciar', name: 'app_reiniciar')]
     public function index(): Response
     {
-		$process = new Process(['/usr/sbin/service', 'nginx', 'status']);
+        $process = new Process(['/usr/sbin/service', 'nginx', 'restart']);
 
 		$process->run();
 
@@ -25,15 +23,8 @@ class Controlador5Controller extends AbstractController
 			throw new ProcessFailedException($process);
 		}
 
-		$nginx = $process->getOutput();
-		$nginx = str_replace(PHP_EOL, '<br>', $nginx);
-
-
-
-       return $this->render('controlador5/index.html.twig', [
-            'controller_name' => 'Controlador1Controller',
-			'info_app' => $nginx ,
+		return $this->render('reiniciar/index.html.twig', [
+            'mensaje' => 'accion realizada',
         ]);
     }
 }
-

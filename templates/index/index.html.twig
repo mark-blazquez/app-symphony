@@ -44,7 +44,7 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	display: inline-block;
-	width: 200px;
+	width: 150px;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	}
@@ -91,37 +91,48 @@
 
 	.navMenu a:nth-child(4):hover ~ .dot {
 	-webkit-transform: translateX(830px);
-	transform: translateX(630px);
+	transform: translateX(550px);
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	opacity: 1;
 	}
 	.navMenu a:nth-child(5):hover ~ .dot {
 	-webkit-transform: translateX(1030px);
-	transform: translateX(830px);
+	transform: translateX(660px);
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	opacity: 1;
 	}
 
 </style>
-<div class="example-wrapper">
-	<div class="d-flex">
-		<h1 class="text-light">Kubectl4Everyone</h1>
-		<button id="boton" class="btn" role="button">Cerrar session</button>
-	</div>
-	<div>
-		<nav class="navMenu">
-			<a href="/pod">Pod</a>
-			<a href="/service">Service</a>
-			<a href="/deployment">Deployment</a>
-			<a href="/replicaset">Replicaset</a>
-			<a href="/nginx">Nginx</a>
-      		<div class="dot"></div>
-    	</nav>
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      	<h1 class="text-light">Kubectl4Everyone</h1>
+		<div class="col-md-3 text-end">
+			<a href="/" ><button id="boton" class="btn" role="button">Cerrar session</button></a>
+		</div>
+    </header>
 
-	</div>	
+</div>
+<div class="col-12 ">
+					
+	<div class=""  >
+	</div>
+	
 </div>
 
+
+
 	
+<div>
+	<nav class="navMenu">
+		<a href="/pod">Pod</a>
+		<a href="/service">Service</a>
+		<a href="/deployment">Deployment</a>
+		<a href="/replicaset">Replicaset</a>
+		<a href="/nginx">Nginx</a>
+      	<div class="dot"></div>
+    </nav>
+</div>
+
 {% endblock %}

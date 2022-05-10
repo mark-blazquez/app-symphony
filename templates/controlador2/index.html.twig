@@ -20,12 +20,16 @@
 	font-family: "Montserrat", sans-serif;
 	}		
 </style>
-
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      	<h1 class="text-light">Kubectl4Everyone</h1>
+		<div class="col-md-3 text-end">
+			<a href="/" ><button id="boton" class="btn" role="button">Cerrar session</button></a>
+		</div>
+    </header>
+</div>
 <div class="example-wrapper">
-	<div class="d-flex">
-		<h1 class="text-light">Kubectl4Everyone</h1>
-		<button id="boton" class="btn" role="button">Cerrar session</button>
-	</div>
+	
 	<div>
 		<table class="text-light table"> 
 			<tr>
@@ -35,4 +39,9 @@
 
 	</div>	
 </div>
+
+<footer class="py-3 my-4">
+    <a href="/" ><p class="text-center text-muted">Volver a inicio</p></a>
+</footer>
+
 {% endblock %}
