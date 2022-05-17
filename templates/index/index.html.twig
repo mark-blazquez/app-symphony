@@ -8,6 +8,7 @@
 
 {% block body %}
 <style>
+@media only screen and (min-width: 1536px){
 	.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 	/* CSS */
@@ -103,27 +104,36 @@
 	transition: all 0.2s ease-in-out;
 	opacity: 1;
 	}
+	.movil{
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 0px) and (max-width:1535px){
+	#boton{
+	background-color: #EA4C89;
+	}
+	body {
+		background: #272727;
+		font-family: "Montserrat", sans-serif;
+	}
+ 	.navMenu{
+		display: none;
+	}
+}
 
 </style>
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       	<h1 class="text-light">Kubectl4Everyone</h1>
-		<div class="col-md-3 text-end">
-			<a href="/" ><button id="boton" class="btn" role="button">Cerrar session</button></a>
+		<div class=" text-end">
+			<a href="http://localhost:8080" ><button id="boton" class="btn" role="button">Cerrar session</button></a>
 		</div>
     </header>
 
 </div>
-<div class="col-12 ">
-					
-	<div class=""  >
-	</div>
-	
-</div>
 
 
-
-	
 <div>
 	<nav class="navMenu">
 		<a href="/pod">Pod</a>
@@ -133,6 +143,36 @@
 		<a href="/nginx">Nginx</a>
       	<div class="dot"></div>
     </nav>
+</div>
+
+<div class="movil">
+				
+	<div class=" "  >
+		<div class="d-flex justify-content-center">
+			<a href="/pod"><h3 class="text-light">Pod</h1></a>
+		</div>
+	</div>
+	<div class=" "  >
+		<div class="d-flex justify-content-center">
+			<a href="/service"><h3 class="text-light">Service</h1></a>
+		</div>
+	</div>
+	<div class=" "  >
+		<div class="d-flex justify-content-center">
+			<a href="/deployment"><h3 class="text-light">Deployment</h1></a>
+		</div>
+	</div>
+	<div class=" "  >
+		<div class="d-flex justify-content-center">
+			<a href="/replicaset"><h3 class="text-light">Replicaset</h1></a>
+		</div>
+	</div>
+	<div class=" "  >
+		<div class="d-flex justify-content-center">
+			<a href="/nginx"><h3 class="text-light">Nginx</h1></a>
+		</div>
+	</div>
+	
 </div>
 
 {% endblock %}

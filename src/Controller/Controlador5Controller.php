@@ -16,7 +16,7 @@ class Controlador5Controller extends AbstractController
     #[Route('/controlador5', name: 'app_controlador5')]
     public function index(): Response
     {
-		$process = new Process(['/usr/sbin/service', 'nginx', 'status']);
+		$process = new Process(['whoami']);
 
 		$process->run();
 
