@@ -19,12 +19,12 @@ class Controlador5Controller extends AbstractController
 		$process = new Process(['/usr/sbin/service', 'nginx', 'status']);
 
 		$process->run();
-
+/*
 		// executes after the command finishes
 		if (!$process->isSuccessful()) {
 			throw new ProcessFailedException($process);
 		}
-
+*/
 		$nginx = $process->getOutput();
 		$nginx = str_replace(PHP_EOL, '<br>', $nginx);
 

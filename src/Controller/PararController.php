@@ -18,10 +18,7 @@ class PararController extends AbstractController
 
 		$process->run();
 
-		// executes after the command finishes
-		if (!$process->isSuccessful()) {
-			throw new ProcessFailedException($process);
-		}
+
 
 		return $this->render('parar/index.html.twig', [
             'mensaje' => 'accion realizada',
