@@ -14,14 +14,14 @@ class ReiniciarController extends AbstractController
     #[Route('/reiniciar', name: 'app_reiniciar')]
     public function index(): Response
     {
-        $process = new Process(['/usr/sbin/service', 'nginx', 'restart']);
+        $process = new Process(['sudo','/usr/sbin/service', 'nginx', 'restart']);
 
 		$process->run();
 
 
 
 		return $this->render('reiniciar/index.html.twig', [
-            'mensaje' => 'accion realizada',
+            'mensaje' => 'accion realizada reinicio realizado',
         ]);
     }
 }

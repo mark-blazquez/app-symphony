@@ -14,14 +14,17 @@ class PararController extends AbstractController
     #[Route('/parar', name: 'app_parar')]
     public function index(): Response
     {
-		$process = new Process(['/usr/sbin/service', 'nginx', 'stop']);
+		$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'stop']);
 
 		$process->run();
 
+		if (!$process->isSuccessful()) {
+			throw new ProcessFailedException($process);
+		}
 
 
 		return $this->render('parar/index.html.twig', [
-            'mensaje' => 'accion realizada',
+            'mensaje' => 'accion realizada, parada de servicio correcta',
         ]);
     }
 }
