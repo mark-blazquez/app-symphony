@@ -30,6 +30,9 @@ reinicio:
 parar:
     path: /parar
     controller: App\Controller\PararController::index
+cerrar:
+    path: /cerrar
+    controller: App\Controller\CerrarController::index
 
     
 
