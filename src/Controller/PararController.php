@@ -8,23 +8,32 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class PararController extends AbstractController
 {
     #[Route('/parar', name: 'app_parar')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
-		$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'stop']);
+		$cookies = $request->cookies;
 
-		$process->run();
+		if ($cookies->has('usuario')){
+			$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'stop']);
 
-		if (!$process->isSuccessful()) {
-			throw new ProcessFailedException($process);
+			$process->run();
+
+			if (!$process->isSuccessful()) {
+				throw new ProcessFailedException($process);
+			}
+
+
+			return $this->render('parar/index.html.twig', [
+				'mensaje' => 'accion realizada, parada de servicio correcta',
+			]);
+		}else {
+			return new RedirectResponse('https://192.168.1.132:8080');
+
 		}
-
-
-		return $this->render('parar/index.html.twig', [
-            'mensaje' => 'accion realizada, parada de servicio correcta',
-        ]);
     }
 }
