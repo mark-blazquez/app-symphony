@@ -63,7 +63,7 @@ class Controlador3Controller extends AbstractController
 				'info_app' => $kubernetes ,
 			]);
 		}else {
-			return new RedirectResponse('https://192.168.1.132:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
 
 		}
     }
