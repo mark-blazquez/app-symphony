@@ -19,7 +19,6 @@ class ReiniciarController extends AbstractController
 		$cookies = $request->cookies;
 
 		if ($cookies->has('usuario')){
-				$process = new Process(['/usr/bin/kubectl', 'get', 'pod']);
 
 			$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'restart']);
 

@@ -61,7 +61,8 @@ class Controlador4Controller extends AbstractController
 		return $this->render('controlador4/index.html.twig', [
 				'controller_name' => 'Controlador1Controller',
 				'info_app' => $kubernetes ,
-			]);
+			]
+		);
 		}else {
 			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
 

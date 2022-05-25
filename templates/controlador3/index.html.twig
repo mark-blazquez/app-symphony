@@ -40,6 +40,23 @@
 
 	</div>	
 </div>
+<div class="example-wrapper">
+	<h1 class="text-light">Formulario de cambio de numero de pod</h1>
+
+	<form action="./modificar" method="post">
+				<div class="form-group">
+					<select class="form-select" name="nombre" placeholder="introduce nombre del deployment" required >
+						<option value="nginx">nginx-pagina con index</option>
+						<option value="nginx2">nginx2-pagina de gestion de tienda</option>
+						<option value="node">node</option>
+					</select>
+					<input type="number" class="form-control" name="numero" placeholder="introduce numero de pod"required></br>
+					<div class="d-flex justify-content-center">
+						<input type="submit" id="boton"  class="btn " value="modificar">
+					</div>
+				</div>
+	</form>	
+</div>
 <footer class="py-3 my-4">
   	<a href="/" ><p class="text-center text-muted">Volver a inicio</p></a>
 </footer>
