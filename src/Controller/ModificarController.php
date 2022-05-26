@@ -26,7 +26,7 @@ class ModificarController extends AbstractController
 
 			//echo $nombre;
 			//echo $numero;
-			$process = new Process(["/usr/bin/kubectl scale deployment.apps/$nombre --replicas=$numero"]);
+			$process = new Process(['/usr/bin/kubectl','scale',"deployment.apps/$nombre","--replicas=$numero"]);
 
 			$process->run();
 
