@@ -39,7 +39,7 @@ class ModificarController extends AbstractController
 				'mensaje' => 'accion realizada, numero de pod modificado',
 			]);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
 
 		}
     }

@@ -64,7 +64,7 @@ class Controlador4Controller extends AbstractController
 			]
 		);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
 
 		}
     }

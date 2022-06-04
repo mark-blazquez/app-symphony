@@ -40,7 +40,7 @@ class Controlador5Controller extends AbstractController
 				'info_app' => $nginx ,
 			]);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
 
 		}
     }

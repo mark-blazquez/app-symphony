@@ -32,7 +32,7 @@ class PararController extends AbstractController
 				'mensaje' => 'accion realizada, parada de servicio correcta',
 			]);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net/:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
 
 		}
     }
