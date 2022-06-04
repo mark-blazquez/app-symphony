@@ -21,7 +21,7 @@ class IndexController extends AbstractController
 				'controller_name' => 'IndexController',
 			]);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8888');
 
 		}
 		

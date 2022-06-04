@@ -30,7 +30,7 @@ class ReiniciarController extends AbstractController
 				'mensaje' => 'accion realizada reinicio realizado',
 			]);
 		}else {
-			return new RedirectResponse('https://torre-ubuntu.ddns.net:8080');
+			return new RedirectResponse('https://torre-ubuntu.ddns.net:8888');
 
 		}
     }
