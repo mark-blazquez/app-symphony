@@ -27,6 +27,7 @@
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       	<h1 class="text-light">Kubectl4Everyone</h1>
 		<div class="col-md-3 text-end">
+			<!-- boton que envia a la ruta de cerrar sesion -->
 			<a href="/cerrar" ><button id="boton" class="btn" role="button">Cerrar session</button></a>
 		</div>
     </header>
@@ -36,6 +37,7 @@
 	<h1 class="text-light text-center">Pod</h1>
 
 	<div>
+		<!-- hace una tabla para mostrar los datos que le pasa el backend-->
 		<table class="text-light table"> 
 			<tr>
 				<td >{{ info_app | raw }}
@@ -46,6 +48,7 @@
 </div>
 
 <footer class="py-3 my-4">
+	<!-- boton que envia a la ruta de inicio-->
   	<a href="/" ><p class="text-center text-muted">Volver a inicio</p></a>
 </footer>
 {% endblock %}

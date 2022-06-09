@@ -30,17 +30,19 @@
 </div>
 <div class="example-wrapper">
 	<h1 class="text-light text-center">Nginx</h1>
-
+	<!--pasa la info del backend y la muestra-->
 	<div>
 		<p class="text-light"> {{ info_app | raw }}</p>
 		
 	</div>
 	<div class="d-flex justify-content-center">
 		<div class="p-2">
+			<!--boton que envia a la ruta de reinicio-->
 			<a href="/reiniciar" ><button id="boton" class="btn" role="button">Reiniciar servicio</button></a>
 		</div>	
 
 		<div class="p-2">
+			<!--boton que envia a la ruta de parar-->
 			<a href="/parar" ><button id="boton" class="btn" role="button">Parar servicio</button></a>
 		</div>	
 

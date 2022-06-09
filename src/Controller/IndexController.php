@@ -15,8 +15,9 @@ class IndexController extends AbstractController
     public function index(Request $request)
     {	
 		$cookies = $request->cookies;
-
+		//comprobacion de la cookie
 		if ($cookies->has('usuario')){
+			//renderizado de el fornt 
 			return $this->render('index/index.html.twig', [
 				'controller_name' => 'IndexController',
 			]);

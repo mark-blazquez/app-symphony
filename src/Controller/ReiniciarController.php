@@ -19,13 +19,11 @@ class ReiniciarController extends AbstractController
 		$cookies = $request->cookies;
 
 		if ($cookies->has('usuario')){
-
+			//proceso de reinicio
 			$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'restart']);
-
+			//ejecucion
 			$process->run();
-
-
-
+			//manda mensaje de estado al front
 			return $this->render('reiniciar/index.html.twig', [
 				'mensaje' => 'accion realizada reinicio realizado',
 			]);

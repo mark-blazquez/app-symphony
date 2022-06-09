@@ -1,7 +1,4 @@
 <?php
-
-
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,21 +18,21 @@ class Controlador5Controller extends AbstractController
 		$cookies = $request->cookies;
 
 		if ($cookies->has('usuario')){
+			//el proceso de recoger el estado de nginx
 			$process = new Process(['/usr/sbin/service', 'nginx', 'status']);
-
+			//ejecucion
 			$process->run();
-	/*
-			// executes after the command finishes
-			if (!$process->isSuccessful()) {
+
+			//aqui la comprobacion de errores debe quitarse porque cuando esta apagado lo detecta como error		
+			/*if (!$process->isSuccessful()) {
 				throw new ProcessFailedException($process);
-			}
-	*/
+			}*/
+			//obtencion del lo grafico
 			$nginx = $process->getOutput();
+			//sustitucion de los saltos de linea, aqui no hace falta hacer lo de la tabla porque es una texto plano
 			$nginx = str_replace(PHP_EOL, '<br>', $nginx);
-
-
-
-		return $this->render('controlador5/index.html.twig', [
+			//lo pasa al front
+			return $this->render('controlador5/index.html.twig', [
 				'controller_name' => 'Controlador1Controller',
 				'info_app' => $nginx ,
 			]);

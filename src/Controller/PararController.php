@@ -19,15 +19,15 @@ class PararController extends AbstractController
 		$cookies = $request->cookies;
 
 		if ($cookies->has('usuario')){
+			//proceso para parar servicio
 			$process = new Process(['sudo','/usr/sbin/service', 'nginx', 'stop']);
-
+			//ejecuta
 			$process->run();
-
+			//errores
 			if (!$process->isSuccessful()) {
 				throw new ProcessFailedException($process);
 			}
-
-
+			//manda mensaje de estado al front
 			return $this->render('parar/index.html.twig', [
 				'mensaje' => 'accion realizada, parada de servicio correcta',
 			]);
